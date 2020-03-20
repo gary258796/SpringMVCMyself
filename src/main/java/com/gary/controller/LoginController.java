@@ -16,12 +16,8 @@ import java.util.List;
 @Controller
 public class LoginController {
 
-    @Autowired
-    private MessageService messageService ;
-
     @GetMapping("/showMyLoginPage")
     public String showLoginPage() {
-
         return "fancy-login" ;
     }
 
@@ -29,7 +25,6 @@ public class LoginController {
 
     @GetMapping("/access-denied")
     public String showAccessDenied() {
-
         return "access-denied";
     }
 }

@@ -1,14 +1,12 @@
 package com.gary.config;
 
 
+import com.gary.aop.Before_Home;
 import com.mchange.net.MailSender;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -34,6 +32,7 @@ import java.util.logging.Logger;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
+@EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.gary")
 @PropertySource("classpath:mysql.properties")
 public class WebConfig implements WebMvcConfigurer {
@@ -43,6 +42,11 @@ public class WebConfig implements WebMvcConfigurer {
     private Environment env ;
 
     private Logger logger = Logger.getLogger(getClass().getName()) ;
+
+    @Bean
+    public Before_Home before_home() {
+        return new Before_Home();
+    }
 
     @Bean
     public ViewResolver viewResolver() {

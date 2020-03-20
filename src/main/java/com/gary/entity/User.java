@@ -1,6 +1,7 @@
 package com.gary.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -9,7 +10,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-@XmlRootElement(name = "User")
+//@XmlRootElement(name = "User")
 public class User {
 
 	@Id
@@ -17,18 +18,19 @@ public class User {
 	@Column(name = "id")
 	protected int id;
 
-	@NotNull(message = "is required!")
+	@NotNull(message = "UserName is required!")
 	@Size(min = 5, message = "userName should be at least 5 characters")
 	@Column(name = "name")
 	private String userName;
 
-	@NotNull(message = "is required!")
+	@Email
+	@NotNull(message = "Email must fill in!")
 	@Column(name = "email", nullable = false)
 	private String email;
 
 
-	@NotNull(message = "is required!")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "Password is required!")
+	@Size(min = 1, message = "Password cant be that short!")
 	@Column(name = "passwd", nullable = false)
 	private String password;
 

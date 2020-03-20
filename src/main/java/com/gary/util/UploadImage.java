@@ -20,7 +20,7 @@ public class UploadImage {
     public void uploadimg(MultipartFile file, User user, String rootPath){
 
         File uploadRootDir = new File(rootPath);
-        System.out.println("\n <<<< uploadRootDir : " + uploadRootDir);
+        System.out.println("\n <<<< uploadRootDir : " + uploadRootDir.getPath() );
 
         if ( uploadRootDir.getPath() == rootPath ) { // 沒有選擇照片上傳
 
@@ -36,11 +36,14 @@ public class UploadImage {
         if (!uploadRootDir.exists()) {
             uploadRootDir.mkdirs();
         }
+
         String name = file.getOriginalFilename();
+        System.out.println("\n >>>>>>>>>> name : " + name);
+
         if(name != ""){
-            String imgurl = rootPath +  File.separator + user.getImgUrl();
+            String imgurl = rootPath + File.separator + user.getImgUrl() ;
             File imgFile = new File(imgurl);
-            imgFile.delete();
+            imgFile.delete(); // 存在就先刪掉那檔案
         }
 
         user.setImgUrl(name);

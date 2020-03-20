@@ -13,21 +13,21 @@ import javax.validation.constraints.Size;
 })
 public class CrmUser {
 
-	@NotNull(message = "is required")
-	@Size(min = 5, message = "userName should be at least 5 characters")
+	@NotNull(message = "CRM is required")
+	@Size(min = 5, message = "CRM userName should be at least 5 characters")
 	private String userName;
 
-	@NotNull(message = "is required")
-	@Size(min = 4, max = 20, message = "is required")
+	@NotNull(message = "CRM is required")
+	@Size(min = 4, max = 20, message = "CRM is required")
 	private String password;
 
-	@NotNull(message = "is required")
-	@Size(min = 4, max = 20, message = "is required")
+	@NotNull(message = "CRM is required")
+	@Size(min = 4, max = 20, message = "CRM is required")
 	private String matchingPassword;
 
 	@Email
-	@NotNull(message = "is required")
-	@Size(min = 1, message = "is required")
+	@NotNull(message = "CRM is required")
+	@Size(min = 1, message = "CRM is required")
 	private String email;
 
 	public CrmUser() {
