@@ -2,10 +2,8 @@ package com.gary.dao.imp;
 
 import com.gary.dao.UserDao;
 import com.gary.entity.User;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -54,6 +52,12 @@ public class UserDaoImpl implements UserDao {
 			logger.info("\n >>> User Not Found! \n");
 
 		return theUser;
+	}
+
+	@Override
+	public String retNameById(int id) {
+		User theUser = findById( id ) ;
+		return theUser.getUserName() ;
 	}
 
 	@Override
@@ -149,7 +153,6 @@ public class UserDaoImpl implements UserDao {
 		currentSession.update(user);
 
 		logger.info("\n >>> Success Update!!");
-
 	}
 
 	@Override

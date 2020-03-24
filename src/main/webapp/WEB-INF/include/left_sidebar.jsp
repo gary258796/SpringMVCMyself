@@ -17,9 +17,6 @@
     }
 </style>
 
-
-
-
 <nav role="navigation">
 
     <div class="sideNav">

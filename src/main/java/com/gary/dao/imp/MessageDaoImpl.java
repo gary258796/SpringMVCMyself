@@ -3,7 +3,6 @@ package com.gary.dao.imp;
 import com.gary.Bean.MessageJsonBean;
 import com.gary.dao.MessageDao;
 import com.gary.entity.Message;
-import com.gary.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -11,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-//extends BaseDaoImp<Message>
+
 
 @Repository("MessageDao")
 public class MessageDaoImpl extends BaseDaoImp<Message> implements MessageDao {
@@ -62,6 +61,24 @@ public class MessageDaoImpl extends BaseDaoImp<Message> implements MessageDao {
     @Override
     public void deleteMessage(Message message) {
         delete(message);
+    }
+
+    @Override
+    public void deleteMessageById(int msgId) {
+        int deleteRows = 0 ;
+
+        String hql = "delete from Message m where id= :id";
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query theQuery = currentSession.createQuery(hql);
+        theQuery.setParameter("id", msgId) ;
+
+        try {
+            deleteRows = theQuery.executeUpdate();
+        } catch (Exception e) {
+            logger.info("Error : deleteMsg wrong !");
+        }
+
+        logger.info("Delete Row number : " + deleteRows );
     }
 
     @Override

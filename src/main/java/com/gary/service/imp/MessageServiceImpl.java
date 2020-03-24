@@ -48,6 +48,11 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
+    public void deleteMessageById(int msgId) {
+        messageDao.deleteMessageById( msgId );
+    }
+
+    @Override
     public Long findMessageCount() {
         return messageDao.findMessageCount() ;
     }

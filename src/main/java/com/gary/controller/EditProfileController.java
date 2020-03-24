@@ -5,6 +5,7 @@ import com.gary.service.UserService;
 import com.gary.util.UploadImage;
 import com.gary.util.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,52 +46,43 @@ public class EditProfileController {
     }
 
     @PostMapping(value = "/editProfile/submitUpdate")
-    public String saveInfo( @Valid @ModelAttribute("curUser") User user, Errors errors,
+    public String saveInfo( @Valid @ModelAttribute("curUser") User user,
                             BindingResult theBindingResult, HttpSession session, HttpServletRequest request, Model model) {
-//
-//        validate.updateValidate(user, user.getId(), theBindingResult);
-//        if( errors.hasErrors() ) {
-//            logger.info("\n >>>>>>>>>>>  error : " + errors);
-//            return "edit-info" ;
-//        }
 
-        validate.updateValidate(user, user.getId(), theBindingResult);
         if ( theBindingResult.hasErrors() ) {
             return  "edit-info" ;
         }
 
+        logger.info("\n\n ##### user, name : " + user.getUserName() + " , email : " + user.getEmail() );
+
         userService.updateUser( user );
-        return "home" ;
+        return "redirect:/home" ;
     }
 
     @GetMapping(value = "/editProfile/edit-img")
     public String editImage(HttpSession session, Model model) {
 
-        User theUser = (User) session.getAttribute("curUser");
-        model.addAttribute("curUser", theUser ) ;
+        User curUser = (User) session.getAttribute("curUser");
+        model.addAttribute("curUser", curUser ) ;
+
 
         return "editimg" ;
     }
 
 
-
-
     @PostMapping("/editProfile/uploadImage")
-    public String uploadFileHandler(HttpSession session, HttpServletRequest request, Model model,
-                                    @RequestParam("uploadfile") MultipartFile file) {
-
+    public String uploadFileHandler(@RequestParam("uploadfile") MultipartFile file,
+                                    HttpSession session,HttpServletRequest request,Model model) {
 
         if ( file == null ) { // 沒有選擇圖片 就直接回去 home page
             return "home" ;
         }
 
-        User user = (User) session.getAttribute("user");
+        User user = (User) session.getAttribute("curUser");
         String rootPath = request.getServletContext().getRealPath(IMGURL);
         uploadImg.uploadimg(file, user, rootPath);
-
-
         model.addAttribute("curUser", user);
-        return "home";
+        return "redirect:/home";
     }
 
 }

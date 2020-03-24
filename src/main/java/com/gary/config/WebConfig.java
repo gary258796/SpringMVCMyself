@@ -1,13 +1,16 @@
 package com.gary.config;
 
 
+import com.gary.aop.After_updateUserInfo_Img;
 import com.gary.aop.Before_Home;
 import com.mchange.net.MailSender;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -46,6 +49,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public Before_Home before_home() {
         return new Before_Home();
+    }
+
+    @Bean
+    public After_updateUserInfo_Img after_updateUserInfo_img() {
+        return new After_updateUserInfo_Img();
     }
 
     @Bean
@@ -170,6 +178,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations("/WEB-INF/upload/")
                 .setCachePeriod(31556926);
     }
-
 
 }

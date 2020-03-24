@@ -1,6 +1,7 @@
 package com.gary.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "message")
@@ -14,16 +15,19 @@ public class Message {
     @Column(name = "userid")
     private int userid ;
 
+    @NotNull(message = "Can't leave empty message !")
     @Column(name = "message")
     private String message ;
 
-    @Column(name = "fromusername")
-    private String fromusername ;
+    @Column(name = "fromuserid")
+    private int fromUserId ;
 
     private String date;
 
     private String ip;
 
+    @Transient
+    private String fromUserName ;
 
     public Message() {
     }
@@ -68,12 +72,20 @@ public class Message {
         this.ip = ip;
     }
 
-    public String getFromusername() {
-        return fromusername;
+    public int getFromUserId() {
+        return fromUserId;
     }
 
-    public void setFromusername(String fromusername) {
-        this.fromusername = fromusername;
+    public void setFromUserId(int fromUserId) {
+        this.fromUserId = fromUserId;
+    }
+
+    public String getFromUserName() {
+        return fromUserName;
+    }
+
+    public void setFromUserName(String fromUserName) {
+        this.fromUserName = fromUserName;
     }
 
     @Override

@@ -20,10 +20,10 @@
 <h1>Update Your Photo!</h1>
 <div>
     <div>
-        <c:if test="${user.imgUrl == null}">
+        <c:if test="${curUser.imgUrl == null}">
             <img id="image" src="${pageContext.request.contextPath}/upload/nopic.jpg" width="100" height="100">
         </c:if>
-        <c:if test="${user.imgUrl != null}">
+        <c:if test="${curUser.imgUrl != null}">
             <img id="image" src="${pageContext.request.contextPath}/upload/${curUser.imgUrl}" width="100" height="100">
         </c:if>
     </div>

@@ -17,6 +17,7 @@ public class UploadImage {
 
     @Autowired
     private UserService userService ;
+
     public void uploadimg(MultipartFile file, User user, String rootPath){
 
         File uploadRootDir = new File(rootPath);
@@ -40,10 +41,15 @@ public class UploadImage {
         String name = file.getOriginalFilename();
         System.out.println("\n >>>>>>>>>> name : " + name);
 
-        if(name != ""){
-            String imgurl = rootPath + File.separator + user.getImgUrl() ;
-            File imgFile = new File(imgurl);
-            imgFile.delete(); // 存在就先刪掉那檔案
+        try {
+            if(name != "" && user.getImgUrl() != null){
+                String imgurl = rootPath + File.separator + user.getImgUrl() ;
+                File imgFile = new File(imgurl);
+                imgFile.delete(); // 存在就先刪掉那檔案
+            }
+        }
+        catch( Exception e ){
+            System.out.println("Exception : "+ e);
         }
 
         user.setImgUrl(name);

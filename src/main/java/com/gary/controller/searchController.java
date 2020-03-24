@@ -28,12 +28,12 @@ public class searchController {
             System.out.println("\n >>>>> No Searching data with name : " + searchName);
 
             // 可以加上 通知 沒有此收尋之使用者
-            return "redirect:home" ;
+            return "redirect:/home" ;
         }
 
         model.addAttribute("hostUser" , hostUser) ;
         session.setAttribute("hostUser", hostUser);
-        return "customerHomePage" ;
+        return "redirect:/customerHomePage" ;
     }
 
 }

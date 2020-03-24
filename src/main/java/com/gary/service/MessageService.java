@@ -17,6 +17,8 @@ public interface MessageService {
 
     void deleteMessage(Message message);
 
+    void deleteMessageById( int msgId) ;
+
     Long findMessageCount();
 
     String getDate();

@@ -36,10 +36,9 @@ public class Validate {
         }
 
         logger.info("\n >>> email is user's original one ! \n");
-
     }
 
-    //留言验证
+    //check msg
     public void messageValidate(Message message, Errors errors){
         if(message.getMessage() != ""){ // not empty
             if(message.getMessage().length() < 255){
@@ -48,7 +47,7 @@ public class Validate {
                 errors.rejectValue("message", "message.required");
             }
         }else{
-            ValidationUtils.rejectIfEmpty(errors, "message", "message.required");
+            ValidationUtils.rejectIfEmpty(errors, "message", "message.required ");
         }
     }
 

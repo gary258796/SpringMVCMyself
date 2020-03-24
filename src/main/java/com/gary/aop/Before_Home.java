@@ -3,13 +3,14 @@ package com.gary.aop;
 import com.gary.entity.Message;
 import com.gary.entity.User;
 import com.gary.service.MessageService;
-import org.aspectj.lang.annotation.After;
+import com.gary.service.UserService;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,6 +24,9 @@ public class Before_Home {
     @Autowired
     private MessageService messageService ;
 
+    @Autowired
+    private UserService userService ;
+
     private Logger logger = Logger.getLogger(getClass().getName());
 
     @Pointcut("execution(* com.gary.controller.HomeController.home(..))" )
@@ -30,36 +34,26 @@ public class Before_Home {
 
     @AfterReturning("home() && args(model,request,session,..)")
     public void beforeGoHome(HttpSession session,HttpServletRequest request, Model model) {
-
         System.out.println("\n >>>>>>>> We got into home !!!!\n");
         prepareBeforeGoHome(session,request,model,false);
-
     }
 
-    @AfterReturning("execution(* com.gary.controller.MessageController.index(..)) && args(session,request,model,..)")
-    public void index( HttpSession session, HttpServletRequest request, Model model) {
+    @Pointcut("execution(* com.gary.controller.HomeController.customerHome(..))" )
+    private void customerHome() {}
 
-        System.out.println("\n >>>>>>>> after return home and got into index !!!!\n");
+    @AfterReturning("customerHome() && args(model,request,session,..)")
+    private void beforeCustomerHome(HttpSession session,HttpServletRequest request, Model model) {
+        System.out.println("\n >>>>>>>> after return home and got into beforeCustomerHome !!!!\n");
         prepareBeforeGoHome(session,request,model,true);
     }
 
-    @AfterReturning("execution(* com.gary.controller.EditProfileController.uploadFileHandler(..)) && args(session,request,model,..)")
-    private void uploadFile(HttpSession session, HttpServletRequest request, Model model) {
-        System.out.println("\n >>>>>>>> after return home and got into uploadFile !!!!\n");
-        prepareBeforeGoHome(session,request,model,false);
-    }
+    // ------------------------- //
 
-    @AfterReturning("execution(* com.gary.controller.EditProfileController.saveInfo(..)) && args(..,session,request,model)")
-    public void saveInfo(HttpSession session, HttpServletRequest request, Model model){
-        System.out.println("\n >>>>>>>> after return home and got into saveInfo !!!!\n");
-        prepareBeforeGoHome(session,request,model,false);
-    }
-
-    @AfterReturning("execution(* com.gary.controller.searchController.searchOthers(..)) && args(..,session,request,model)")
-    public void searchOthers(HttpSession session, HttpServletRequest request, Model model) {
-        System.out.println("\n >>>>>>>> after return home and got into searchOthers home !!!!\n");
-        prepareBeforeGoHome(session,request,model,true);
-    }
+//    @AfterReturning("execution(* com.gary.controller.EditProfileController.uploadFileHandler(..)) && args(session,request,model,..)")
+//    private void uploadFile(HttpSession session, HttpServletRequest request, Model model) {
+//        System.out.println("\n >>>>>>>> after return home and got into uploadFile !!!!\n");
+//        prepareBeforeGoHome(session,request,model,false);
+//    }
 
     public void prepareBeforeGoHome(HttpSession session, HttpServletRequest request, Model model, boolean isIndex) {
 
@@ -84,9 +78,24 @@ public class Before_Home {
 
 
         model.addAttribute("message", new Message()) ;
-        model.addAttribute("curUser", curUser );
+        // model.addAttribute("curUser", curUser );
         model.addAttribute("id", curUser.getId()) ;
+        msgList = getUserNameForShowingById( msgList) ;
         model.addAttribute("messages", msgList) ;
+
+        logger.info("\n\n\n\n\n");
+        logger.info("\n>>>>> curUser : " + curUser.getUserName() );
+        logger.info("\n>>>>> hostUser : " + hostUser.getUserName() );
+    }
+
+    public List<Message> getUserNameForShowingById(List<Message> msgList) {
+        String tmp_str  = "" ;
+        for( Message i : msgList ){
+            tmp_str = userService.retNameById( i.getFromUserId() ) ;
+            i.setFromUserName(tmp_str);
+        }
+
+        return msgList ;
     }
 
 

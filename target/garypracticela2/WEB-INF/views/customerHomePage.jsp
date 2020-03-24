@@ -17,76 +17,15 @@
 <head>
     <title> Home Page</title>
     <c:import url="/WEB-INF/include/inc.jsp"/>
-    <style>
-        .main
-        {
-            margin-left: 200px;
-        }
-
-        .msgPost {
-            margin-left: 300px;
-            width: 50%;
-            padding: 10px 20px;
-            box-sizing: border-box;
-        }
-
-        .msgShow
-        {
-            margin-left: 300px;
-        }
-    </style>
 </head>
 </head>
 
 
 <body>
+
 <c:import url="/WEB-INF/include/user_header.jsp"/>
 <c:import url="/WEB-INF/include/left_sidebar.jsp"/>
-
-<div>
-
-    <div class="main">
-
-        <div class="msgPost">
-
-
-            <form:form action="${pageContext.request.contextPath}/message/submitMsg" modelAttribute="message" method="post" role="form">
-                <div>
-                    <div>
-                        <form:textarea cols="50" rows="5" path="message" id="message" class="form-control" placeholder="leave message to ${hostUser.userName}..."/>
-                    </div>
-                </div>
-
-                <input type="submit"  value="Send Message"/>
-            </form:form>
-
-            <br><br>
-            ------------------------------------------------------------------------------------
-
-            <div>
-                <div>
-                    <c:forEach var="message" items="${messages}">
-                        <div>
-                            <div>
-                                <div>
-
-                                    <h1>User ${message.fromusername} say :  ${message.message} </h1><br>
-                                    <h3>at time : ${message.date}</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
-
-
-        </div>
-
-
-
-    </div>
-
-</div>
+<c:import url="/WEB-INF/include/user_main.jsp" />
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.gary.entity;
 
+import com.gary.validation.ValidEmail;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
@@ -10,7 +12,7 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-//@XmlRootElement(name = "User")
+@XmlRootElement(name = "User")
 public class User {
 
 	@Id
@@ -23,8 +25,9 @@ public class User {
 	@Column(name = "name")
 	private String userName;
 
-	@Email
+	@ValidEmail
 	@NotNull(message = "Email must fill in!")
+	@Size(min = 1, message = "Email cant be that short")
 	@Column(name = "email", nullable = false)
 	private String email;
 

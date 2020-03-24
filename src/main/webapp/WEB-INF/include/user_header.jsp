@@ -39,9 +39,6 @@
                 </form>
                 </a>
 
-                <%--<c:if test="${curUser != hostUser }">--%>
-                    <%--<a href="${pageContext.request.contextPath}/message/submitMsg">Leave Message</a>--%>
-                <%--</c:if>--%>
 
                 <a href="${pageContext.request.contextPath}/home">Home</a>
 

@@ -82,6 +82,10 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public String retNameById(int id) {
+        return userDao.retNameById(id) ;
+    }
 
     @Override
     public void saveUser(CrmUser crmUser) {
