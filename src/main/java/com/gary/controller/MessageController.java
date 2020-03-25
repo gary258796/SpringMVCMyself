@@ -1,12 +1,13 @@
 package com.gary.controller;
 
 
-import com.gary.Bean.MessageJsonBean;
 import com.gary.entity.Message;
 import com.gary.entity.User;
 import com.gary.service.MessageService;
+import com.gary.util.SendEmailTLS;
 import com.gary.util.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,10 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.List;
 import java.util.logging.Logger;
 
-
+@EnableAsync
 @Controller
 public class MessageController {
 
@@ -32,6 +32,9 @@ public class MessageController {
 
     @Autowired
     private Validate validate ;
+
+    @Autowired
+    private SendEmailTLS sendEmailTLS ;
 
     @RequestMapping(value = "/message/submitMsg", method = {RequestMethod.POST})
     public String index(HttpSession session, HttpServletRequest request, Model model,@Valid Message message, BindingResult result) throws Exception {
@@ -60,12 +63,13 @@ public class MessageController {
         message.setFromUserId(curUser.getId());
         messageService.saveMessage(message);
 
-        System.out.println("\n >>>> message : " + message);
 
         // after return home or customer home
         // aop will help to set some info for home pages
-
-        if (hostUser != curUser) return "redirect:/customerHomePage";
+        if (hostUser != curUser) { // return 之前 , 發訊息通知 hostuser有人留言給他
+            sendEmailTLS.sendSimpleEmail("TestAccount@text.com",hostUser.getEmail(),"New Message", curUser.getUserName() + " leave message for you!");
+            return "redirect:/customerHomePage";
+        }
         return "redirect:/home";
     }
 
