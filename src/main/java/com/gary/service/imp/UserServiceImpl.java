@@ -1,11 +1,14 @@
 package com.gary.service.imp;
 
-import com.gary.dao.RoleDao;
-import com.gary.dao.UserDao;
-import com.gary.entity.Crm.CrmUser;
-import com.gary.entity.Role;
-import com.gary.entity.User;
+import com.gary.persistence.dao.RoleDao;
+import com.gary.persistence.dao.TokenDao;
+import com.gary.persistence.dao.UserDao;
+import com.gary.persistence.entity.Role;
+import com.gary.persistence.entity.User;
+import com.gary.persistence.entity.VerificationToken;
 import com.gary.service.UserService;
+import com.gary.web.dto.UserDto;
+import com.gary.web.exception.EmailExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -30,6 +33,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RoleDao roleDao;
+
+    @Autowired
+    private TokenDao tokenDao ;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -88,18 +94,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(CrmUser crmUser) {
+    public User saveUser(UserDto userDto) throws EmailExistsException {
+
+        if(isUserEmailExist(userDto.getEmail())){
+            throw new EmailExistsException() ;
+        }
 
         User user = new User();
         // assign user details to the user object
-        user.setUserName(crmUser.getUserName());
-        user.setPassword(passwordEncoder.encode(crmUser.getPassword()));
-        user.setEmail(crmUser.getEmail());
-
+        user.setUserName(userDto.getUserName());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setEmail(userDto.getEmail());
         // give user default role of "USER"
         user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_USER")));
 
         userDao.saveUser(user);
+
+        return user ;
     }
 
     @Override
@@ -147,7 +158,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isUserEmailExist(String email) {
-        return false;
+        User checkUser = userDao.findByUserEmail(email) ;
+        if(checkUser==null) return false ;
+
+        return true;
     }
 
     @Override
@@ -162,5 +176,11 @@ public class UserServiceImpl implements UserService {
             }
         }
         return false;
+    }
+
+    @Override
+    public void createVerificationToken(User user, String token) {
+        VerificationToken newToken = new VerificationToken(token, user) ;
+        tokenDao.save(newToken);
     }
 }

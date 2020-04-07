@@ -1,8 +1,8 @@
 package com.gary.service.imp;
 
 import com.gary.Bean.MessageJsonBean;
-import com.gary.dao.MessageDao;
-import com.gary.entity.Message;
+import com.gary.persistence.dao.MessageDao;
+import com.gary.persistence.entity.Message;
 import com.gary.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

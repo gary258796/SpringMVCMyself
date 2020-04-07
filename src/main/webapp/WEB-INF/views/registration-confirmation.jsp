@@ -6,12 +6,12 @@
 
 <body>
 
-	<h2>User registered successfully!</h2>
+	<h2>Registered successfully!</h2>
+	<hr><h4>Please check your email and activate your account by clicking the link inside email!</h4>
 
-	<hr>
-	
-	<a href="${pageContext.request.contextPath}/showMyLoginPage">Go Login!</a>
-	
+	<hr><hr>
+	<a href="${pageContext.request.contextPath}/showMyLoginPage">Return Login Page.</a>
+
 </body>
 
 </html>

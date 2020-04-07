@@ -1,6 +1,5 @@
 package com.gary.validation;
 
-import com.gary.dao.UserDao;
 import com.gary.service.UserService;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class FieldRepeatValidator implements ConstraintValidator<FieldRepeat, Ob
         String userName = (String) o ;
         logger.info("\n <<< userName : " + userName + "\n") ;
 
-        if ( userService.findByUserName( userName )  !=  null  ) {
+        if ( userService.findByUserName(userName) != null) {
             // 有這個username的用戶了
             message = "already exists!" ;
             return false ;

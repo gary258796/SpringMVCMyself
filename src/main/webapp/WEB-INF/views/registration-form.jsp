@@ -57,7 +57,7 @@
 
 					<!-- Registration Form -->
 					<form:form action="${pageContext.request.contextPath}/register/processRegistrationForm" 
-						  	   modelAttribute="crmUser"
+						  	   modelAttribute="userDto"
 						  	   class="form-horizontal">
 
 					    <!-- Place for messages: error, alert etc ... -->

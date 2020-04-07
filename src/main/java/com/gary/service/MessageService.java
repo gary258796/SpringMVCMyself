@@ -1,7 +1,7 @@
 package com.gary.service;
 
 import com.gary.Bean.MessageJsonBean;
-import com.gary.entity.Message;
+import com.gary.persistence.entity.Message;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface MessageService {
 
     void deleteMessage(Message message);
 
-    void deleteMessageById( int msgId) ;
+    void deleteMessageById(int msgId) ;
 
     Long findMessageCount();
 

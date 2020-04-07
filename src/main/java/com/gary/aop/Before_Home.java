@@ -1,7 +1,7 @@
 package com.gary.aop;
 
-import com.gary.entity.Message;
-import com.gary.entity.User;
+import com.gary.persistence.entity.Message;
+import com.gary.persistence.entity.User;
 import com.gary.service.MessageService;
 import com.gary.service.UserService;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -29,7 +29,7 @@ public class Before_Home {
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
-    @Pointcut("execution(* com.gary.controller.HomeController.home(..))" )
+    @Pointcut("execution(* com.gary.web.controller.HomeController.home(..))" )
     private void home() {}
 
     @AfterReturning("home() && args(model,request,session,..)")
@@ -38,7 +38,7 @@ public class Before_Home {
         prepareBeforeGoHome(session,request,model,false);
     }
 
-    @Pointcut("execution(* com.gary.controller.HomeController.customerHome(..))" )
+    @Pointcut("execution(* com.gary.web.controller.HomeController.customerHome(..))" )
     private void customerHome() {}
 
     @AfterReturning("customerHome() && args(model,request,session,..)")

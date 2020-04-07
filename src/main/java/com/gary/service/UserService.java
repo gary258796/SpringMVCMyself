@@ -1,7 +1,8 @@
 package com.gary.service;
 
-import com.gary.entity.Crm.CrmUser;
-import com.gary.entity.User;
+import com.gary.persistence.entity.User;
+import com.gary.web.dto.UserDto;
+import com.gary.web.exception.EmailExistsException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public interface UserService extends UserDetailsService {
 
     User findByEmail(String email);
 
-    void saveUser(CrmUser user);
+    User saveUser(UserDto userDto) throws EmailExistsException;
 
     void saveUser(User user);
 
@@ -43,4 +44,5 @@ public interface UserService extends UserDetailsService {
 
     boolean isUserEmailExistExceptSelf(String sqlEmail, String localEmail);
 
+    void createVerificationToken(User user, String token) ;
 }
