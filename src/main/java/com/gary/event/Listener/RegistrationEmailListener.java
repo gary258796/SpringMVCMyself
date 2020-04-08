@@ -6,6 +6,7 @@ import com.gary.service.UserService;
 import com.gary.web.util.SendEmailTLS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -21,12 +22,10 @@ public class RegistrationEmailListener implements ApplicationListener<OnRegistra
 
     @Override
     public void onApplicationEvent(OnRegistrationSuccessEvent event) {
-        System.out.println("\n\n step 3 .\n");
-        this.confirmRegistration(event);
+            this.confirmRegistration(event);
     }
 
     private void confirmRegistration(OnRegistrationSuccessEvent event){
-        System.out.println("\n\n step 4 .\n");
         User user = event.getUser() ;
         String token = UUID.randomUUID().toString();
         userService.createVerificationToken(user, token);
@@ -34,7 +33,8 @@ public class RegistrationEmailListener implements ApplicationListener<OnRegistra
         String recipient = user.getEmail() ;
         String subject = "Registration Confirmation" ;
         String url = event.getAppUrl() + "/confirmRegistration?token=" + token;
-        String message = "Thank you for registering. Please click on the below link to activate your account.";
-        emailService.sendSimpleEmail(recipient, subject, message + "http://localhost:8081/garypracticela2_war_exploded/" + url);
+        String message = "Thank you for registering. Please click on the below link to activate your account.\n";
+        emailService.sendSimpleEmail(recipient, subject, message + "http://localhost:8081" + url);
+        // System.out.println("\n\n step 7 .\n");
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.validation.Valid;
@@ -60,13 +61,11 @@ public class RegistrationController {
                 // before safe , check if email is exists
                 User registUser = userService.saveUser(userDto);
                 String appUrl = request.getContextPath() ;
-                System.out.println("\n\n step 1 .\n");
-                eventPublisher.publishEvent(new OnRegistrationSuccessEvent(registUser, appUrl));
+                ContextLoader.getCurrentWebApplicationContext().publishEvent(new OnRegistrationSuccessEvent(registUser, appUrl));
+                // eventPublisher.publishEvent(new OnRegistrationSuccessEvent(registUser, appUrl));
             }catch (EmailExistsException exe){
                 theModel.addAttribute("registrationError", "Email already exists.");
                 return "registration-form";
-            }catch (Exception e) {
-                e.printStackTrace();
             }
         } else {
             return "registration-form";

@@ -26,8 +26,6 @@ public class SendEmailTLS {
         catch (Exception e) {
             System.out.println("\n >>> Error When Sending email : " + e);
         }
-
-
     }
 
 }
