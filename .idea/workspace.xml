@@ -8,15 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d628c17-d96e-4613-ae44-8b8e632b4c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/web/util/SendEmailTLS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/web/util/SendEmailTLS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/registration-confirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/registration-confirmation.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/registration-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/registration-form.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="486">
+              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#795#796#0" expanded="true" />
@@ -150,8 +141,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="63" column="129" selection-start-line="63" selection-start-column="129" selection-end-line="63" selection-end-column="129" />
+            <state relative-caret-position="627">
+              <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -196,8 +187,8 @@
       <find>other</find>
       <find>step</find>
       <find>isValid</find>
-      <find>RegistrationEmailListener</find>
       <find>MessageSource</find>
+      <find>RegistrationEmailListener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -524,7 +515,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586322386170" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586323025516" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -658,7 +649,7 @@
       <workItem from="1585017884711" duration="16355000" />
       <workItem from="1586267607413" duration="430000" />
       <workItem from="1586271613317" duration="6392000" />
-      <workItem from="1586310190405" duration="10207000" />
+      <workItem from="1586310190405" duration="10940000" />
     </task>
     <task id="LOCAL-00001" summary="第一次commit&#10;&#10;登入 新增user&#10;檔案上傳&#10;簡單留言功能和顯示">
       <created>1584077302236</created>
@@ -695,11 +686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586276766027</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit Date: 20200408&#10;&#10;Google SMTP 486 and 587 is working fine. &#10;Bug in last version : &#10;   Registration confirm mail will send twice.(Solved)&#10;   Due to Spring mvc and Spring will have two containers in the web project , see the details from the website : &#10;   http://www.programmersought.com/article/6884435108/">
+      <created>1586322600422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586322600422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143152000" />
+    <option name="totallyTimeSpent" value="143885000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -712,7 +710,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-40" y="23" width="1440" height="824" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -724,7 +721,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.1010929" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.17213115" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6215847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -813,7 +810,8 @@
     <MESSAGE value="Commit Date: 20200320 &#10;&#10;留言功能ok 並刪除不需要之冗余程式碼&#10;bug 目前更新使用者資訊及頭像時還有錯誤 待修復" />
     <MESSAGE value="Commit Date: 20200324&#10;&#10;更新使用者資訊及頭像 bug fix" />
     <MESSAGE value="Commit Date: 20200407&#10;&#10;Add registration confirmation by email.&#10;(little bug, google smtp 486 will send email twice, which means listener was triggered twice.  And 587 is not working suddenly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Date: 20200407&#10;&#10;Add registration confirmation by email.&#10;(little bug, google smtp 486 will send email twice, which means listener was triggered twice.  And 587 is not working suddenly)" />
+    <MESSAGE value="Commit Date: 20200408&#10;&#10;Google SMTP 486 and 587 is working fine. &#10;Bug in last version : &#10;   Registration confirm mail will send twice.(Solved)&#10;   Due to Spring mvc and Spring will have two containers in the web project , see the details from the website : &#10;   http://www.programmersought.com/article/6884435108/" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Date: 20200408&#10;&#10;Google SMTP 486 and 587 is working fine. &#10;Bug in last version : &#10;   Registration confirm mail will send twice.(Solved)&#10;   Due to Spring mvc and Spring will have two containers in the web project , see the details from the website : &#10;   http://www.programmersought.com/article/6884435108/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1009,37 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#121#148#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/TaskExecutorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1097,10 +1064,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#121#148#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="63" column="129" selection-start-line="63" selection-start-column="129" selection-end-line="63" selection-end-column="129" />
+        <state relative-caret-position="627">
+          <caret line="63" column="29" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
         </state>
       </provider>
     </entry>
