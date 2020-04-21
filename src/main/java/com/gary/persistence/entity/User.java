@@ -59,6 +59,13 @@ public class User {
 		this.id = id;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public String getUserName() {
 		return userName;

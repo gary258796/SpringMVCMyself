@@ -32,9 +32,9 @@ public class RegistrationEmailListener implements ApplicationListener<OnRegistra
 
         String recipient = user.getEmail() ;
         String subject = "Registration Confirmation" ;
-        String url = event.getAppUrl() + "/confirmRegistration?token=" + token;
+        String url = event.getAppUrl() + "/register/confirmRegistration?token=" + token;
         String message = "Thank you for registering. Please click on the below link to activate your account.\n";
-        emailService.sendSimpleEmail(recipient, subject, message + "http://localhost:8081" + url);
+        emailService.sendSimpleEmail(recipient, subject, message + "http://localhost:8080" + url);
         // System.out.println("\n\n step 7 .\n");
     }
 }

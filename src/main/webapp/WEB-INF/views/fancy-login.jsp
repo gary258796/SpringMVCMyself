@@ -13,12 +13,8 @@
 </head>
 
 <body>
-<%--<c:if test="${ifLogin==true}">--%>
-	<%--<c:import url="/WEB-INF/include/user_header.jsp"/>--%>
-<%--</c:if>--%>
-<%--<c:if test="${ifLogin==false}">--%>
-	<%--<c:import url="/WEB-INF/include/login_header.jsp"/>--%>
-<%--</c:if>--%>
+
+	<h4>${success_Msg}</h4>
 
 	<div>
 

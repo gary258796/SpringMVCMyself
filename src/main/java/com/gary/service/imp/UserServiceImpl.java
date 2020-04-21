@@ -1,8 +1,8 @@
 package com.gary.service.imp;
 
 import com.gary.persistence.dao.RoleDao;
-import com.gary.persistence.dao.TokenDao;
 import com.gary.persistence.dao.UserDao;
+import com.gary.persistence.dao.VerificationTokenRepository;
 import com.gary.persistence.entity.Role;
 import com.gary.persistence.entity.User;
 import com.gary.persistence.entity.VerificationToken;
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     private RoleDao roleDao;
 
     @Autowired
-    private TokenDao tokenDao ;
+    private VerificationTokenRepository tokenRepository ;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -56,8 +56,14 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
         User user = userDao.findByUserEmail(userEmail);
         if (user == null) {
-            throw new UsernameNotFoundException("Invalid userEmail or password la .");
+            throw new UsernameNotFoundException("Invalid userEmail sor password.");
         }
+        // user isn't null
+        // check if user is enabled or not(有沒有驗證過)
+        if( !user.isEnabled() ) { // not enabled
+            throw new UsernameNotFoundException("Not enabled yet. Please check your mail and click the link we sent for you when you registered.");
+        }
+
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
                 mapRolesToAuthorities(user.getRoles()));
     }
@@ -181,6 +187,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void createVerificationToken(User user, String token) {
         VerificationToken newToken = new VerificationToken(token, user) ;
-        tokenDao.save(newToken);
+        System.out.println("before\n");
+        tokenRepository.save(newToken) ;
+        System.out.println("after\n");
+    }
+
+    @Override
+    public VerificationToken getVerificationToken(String token) {
+        return tokenRepository.findByToken(token) ;
     }
 }

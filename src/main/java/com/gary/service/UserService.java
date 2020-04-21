@@ -1,6 +1,7 @@
 package com.gary.service;
 
 import com.gary.persistence.entity.User;
+import com.gary.persistence.entity.VerificationToken;
 import com.gary.web.dto.UserDto;
 import com.gary.web.exception.EmailExistsException;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,8 +10,6 @@ import java.util.List;
 
 
 public interface UserService extends UserDetailsService {
-
-
 
     User findByUserEmail(String userEmail) ;
 
@@ -45,4 +44,6 @@ public interface UserService extends UserDetailsService {
     boolean isUserEmailExistExceptSelf(String sqlEmail, String localEmail);
 
     void createVerificationToken(User user, String token) ;
+
+    VerificationToken getVerificationToken(String token) ;
 }

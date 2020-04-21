@@ -8,12 +8,21 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -24,6 +33,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
@@ -36,6 +46,7 @@ import java.util.logging.Logger;
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.gary")
 @PropertySource({"classpath:/mysql.properties", "classpath:/mail.properties"})
+@EnableJpaRepositories(basePackages = "com.gary.persistence.dao")
 public class WebConfig implements WebMvcConfigurer {
 
     // hold jdbc properties
@@ -75,7 +86,6 @@ public class WebConfig implements WebMvcConfigurer {
         } catch (PropertyVetoException e) {
             throw new RuntimeException(e) ;
         }
-
 
         // log the connection props
         logger.info(">>> jdbc.url= " + env.getProperty("jdbc.url"));
@@ -155,6 +165,7 @@ public class WebConfig implements WebMvcConfigurer {
         return  hibernateTemplate ;
     }
 
+    // 上傳圖片相關設定
     @Bean(name="multipartResolver")
     public CommonsMultipartResolver multipartResolver() throws IOException {
 
@@ -170,6 +181,7 @@ public class WebConfig implements WebMvcConfigurer {
         configurer.enable();
     }
 
+    // 處理靜態資源對應路徑（如圖片）
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/upload/**")
@@ -177,7 +189,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .setCachePeriod(31556926);
     }
 
-
+    // SMTP相關設定
     @Bean
     public MailSender mailSender(Environment env){
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
@@ -191,7 +203,6 @@ public class WebConfig implements WebMvcConfigurer {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         return mailSender ;
-
     }
 
 }

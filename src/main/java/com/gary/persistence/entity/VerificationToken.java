@@ -5,7 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Table(name = "verificationToken")
+@Table(name = "verificationToken") // if no specify, default will be class name
+                                   // column is same !
 public class VerificationToken {
 
     private static final int EXPIRATION = 60 * 24;
@@ -13,7 +14,7 @@ public class VerificationToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "token")
     private String token;
@@ -25,9 +26,7 @@ public class VerificationToken {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public VerificationToken() {
-        super();
-    }
+    protected VerificationToken(){} // will be use by jpa , we will not use it directly
 
     public VerificationToken(final String token) {
         super();
@@ -44,11 +43,11 @@ public class VerificationToken {
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
