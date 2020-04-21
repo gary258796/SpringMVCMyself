@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8d628c17-d96e-4613-ae44-8b8e632b4c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/config/CustomAuthenticationSuccessHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/CustomAuthenticationSuccessHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +33,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/TaskExecutorConfig.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#hibernateTemplate#0;class#WebConfig#0" />
+                <element signature="method#multipartResolver#0;class#WebConfig#0" />
+                <element signature="method#addResourceHandlers#0;class#WebConfig#0" />
+                <element signature="method#mailSender#0;class#WebConfig#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,7 +103,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -244,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/TokenRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/PersistenceJPAConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/VerificationTokenRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fancy-login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" />
@@ -256,6 +258,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gary/security/CustomAuthenticationProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" />
       </list>
     </option>
   </component>
@@ -301,7 +304,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -572,12 +574,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587452373384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587452960102" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -744,11 +747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587439713575</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit Date: 20200421_2&#10;&#10;(ing...)&#10;客製登入驗證以及登入失敗handler...等">
+      <created>1587452453207</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587452453207</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164331000" />
+    <option name="totallyTimeSpent" value="164798000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,8 +771,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-31" y="23" width="1440" height="824" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -772,7 +783,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32786885" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.1284153" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.1284153" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -784,7 +795,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3647541" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329235" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.040983606" />
+      <window_info anchor="bottom" id="Version Control" order="14" visible="true" weight="0.114754096" />
       <window_info anchor="bottom" id="Spring" order="15" weight="0.329235" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -861,7 +872,8 @@
     <MESSAGE value="Commit Date: 20200320 &#10;&#10;留言功能ok 並刪除不需要之冗余程式碼&#10;bug 目前更新使用者資訊及頭像時還有錯誤 待修復" />
     <MESSAGE value="Commit Date: 20200324&#10;&#10;更新使用者資訊及頭像 bug fix" />
     <MESSAGE value="Commit Date: 20200421&#10;&#10;使用者註冊之後獲取驗證信.&#10;並且能夠在點擊驗證信內連結之後啟用帳號(enabled: false -&gt; true ) &#10;Token 部分使用Jpa Repository.&#10;之後可能把其他Dao 也改成使用Repository減少code量." />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Date: 20200421&#10;&#10;使用者註冊之後獲取驗證信.&#10;並且能夠在點擊驗證信內連結之後啟用帳號(enabled: false -&gt; true ) &#10;Token 部分使用Jpa Repository.&#10;之後可能把其他Dao 也改成使用Repository減少code量." />
+    <MESSAGE value="Commit Date: 20200421_2&#10;&#10;(ing...)&#10;客製登入驗證以及登入失敗handler...等" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Date: 20200421_2&#10;&#10;(ing...)&#10;客製登入驗證以及登入失敗handler...等" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1156,20 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#hibernateTemplate#0;class#WebConfig#0" />
-            <element signature="method#multipartResolver#0;class#WebConfig#0" />
-            <element signature="method#addResourceHandlers#0;class#WebConfig#0" />
-            <element signature="method#mailSender#0;class#WebConfig#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/TaskExecutorConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1224,16 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/JpaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -1275,6 +1263,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/JpaConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#hibernateTemplate#0;class#WebConfig#0" />
+            <element signature="method#multipartResolver#0;class#WebConfig#0" />
+            <element signature="method#addResourceHandlers#0;class#WebConfig#0" />
+            <element signature="method#mailSender#0;class#WebConfig#0" />
+          </folding>
         </state>
       </provider>
     </entry>
