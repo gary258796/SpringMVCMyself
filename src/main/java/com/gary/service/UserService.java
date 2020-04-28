@@ -43,7 +43,4 @@ public interface UserService extends UserDetailsService {
 
     boolean isUserEmailExistExceptSelf(String sqlEmail, String localEmail);
 
-    void createVerificationToken(User user, String token) ;
-
-    VerificationToken getVerificationToken(String token) ;
 }

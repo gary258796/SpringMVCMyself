@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>Gary Project - Access Denied</title>
+	<title>luv2code - Access Denied</title>
 </head>
 
 <body>

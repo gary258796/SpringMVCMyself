@@ -1,12 +1,8 @@
 package com.gary.config;
 
-import com.gary.security.CustomAuthenticationProvider;
-import com.gary.security.CustomAuthenticationSuccessHandler;
-import com.gary.security.CustomAuthenticationFailureHandler;
 import com.gary.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,19 +11,22 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
+
 @Configuration
 @EnableWebSecurity
-@ComponentScan(basePackages = { "com.gary.security" })
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
 
+
     @Autowired
     private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Autowired
-    private CustomAuthenticationFailureHandler authenticationFailureHandler ;
+    private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+
 
 //    @Autowired
 //    private DataSource securityDataSource ;
@@ -45,17 +44,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
        http.authorizeRequests()
                .antMatchers("/").hasRole("USER")
-                    .and()
+               .and()
                .formLogin()
-                    .loginPage("/showMyLoginPage")
-                    .loginProcessingUrl("/authenticateTheUser")
-                    .usernameParameter("email")
-                    .successHandler(customAuthenticationSuccessHandler)
-                    .failureHandler(authenticationFailureHandler)
+               .loginPage("/showMyLoginPage")
+               .loginProcessingUrl("/authenticateTheUser")
+               .usernameParameter("email")
+               .successHandler(customAuthenticationSuccessHandler)
+               .failureHandler(customAuthenticationFailureHandler)
                .permitAll()
-                    .and()
+               .and()
                .logout().permitAll()
-                    .and()
+               .and()
                .exceptionHandling().accessDeniedPage("/access-denied");
 
 

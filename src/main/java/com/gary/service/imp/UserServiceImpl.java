@@ -2,10 +2,8 @@ package com.gary.service.imp;
 
 import com.gary.persistence.dao.RoleDao;
 import com.gary.persistence.dao.UserDao;
-import com.gary.persistence.dao.VerificationTokenRepository;
 import com.gary.persistence.entity.Role;
 import com.gary.persistence.entity.User;
-import com.gary.persistence.entity.VerificationToken;
 import com.gary.service.UserService;
 import com.gary.web.dto.UserDto;
 import com.gary.web.exception.EmailExistsException;
@@ -24,7 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@Transactional
+@Transactional// 使用默認的transactionManager
 @Service("UserService")
 public class UserServiceImpl implements UserService {
 
@@ -33,9 +31,6 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RoleDao roleDao;
-
-    @Autowired
-    private VerificationTokenRepository tokenRepository ;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -182,18 +177,5 @@ public class UserServiceImpl implements UserService {
             }
         }
         return false;
-    }
-
-    @Override
-    public void createVerificationToken(User user, String token) {
-        VerificationToken newToken = new VerificationToken(token, user) ;
-        System.out.println("before\n");
-        tokenRepository.save(newToken) ;
-        System.out.println("after\n");
-    }
-
-    @Override
-    public VerificationToken getVerificationToken(String token) {
-        return tokenRepository.findByToken(token) ;
     }
 }

@@ -4,6 +4,7 @@ import com.gary.event.OnRegistrationSuccessEvent;
 import com.gary.persistence.entity.User;
 import com.gary.persistence.entity.VerificationToken;
 import com.gary.service.UserService;
+import com.gary.service.VerificationTokenService;
 import com.gary.web.dto.UserDto;
 import com.gary.web.exception.EmailExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,9 @@ public class RegistrationController {
 
     @Autowired
     private UserService userService ;
+
+    @Autowired
+    private VerificationTokenService verificationTokenService ;
 
     @Autowired
     private ApplicationEventPublisher eventPublisher ;
@@ -62,7 +66,6 @@ public class RegistrationController {
         // form validation
         if (!theBindingResult.hasErrors()){
             try{
-                // before safe , check if email is exists
                 User registUser = userService.saveUser(userDto);
                 String appUrl = request.getContextPath() ;
 
@@ -85,7 +88,7 @@ public class RegistrationController {
     public ModelAndView confirmRegistration(WebRequest request, Model model, @RequestParam("token") String token, RedirectAttributes redirectAttributes) {
 
         // get url token parameter ( token)
-        VerificationToken verificationToken = userService.getVerificationToken(token);
+        VerificationToken verificationToken = verificationTokenService.getVerificationToken(token);
         // if token is null, show invalidtoken msg in jsp page
         if(verificationToken==null){
             String message = "Token inValid! Please ask for new token!" ;

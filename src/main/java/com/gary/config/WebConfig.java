@@ -35,6 +35,7 @@ import java.util.logging.Logger;
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.gary")
 @PropertySource({"classpath:/mysql.properties", "classpath:/mail.properties"})
+@EnableJpaRepositories(basePackages = "com.gary.persistence.dao")
 public class WebConfig implements WebMvcConfigurer {
 
     // hold jdbc properties
@@ -90,8 +91,6 @@ public class WebConfig implements WebMvcConfigurer {
         securityDataSource.setMaxPoolSize( getIntPropertyfromString("connection.pool.maxPoolSize") );
         securityDataSource.setMaxIdleTime( getIntPropertyfromString("connection.pool.maxIdleTime") );
 
-
-
         return securityDataSource ;
     }
 
@@ -111,6 +110,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect")) ;
         props.setProperty("hibernate.show_sql", env.getProperty("hibernate.show_sql")) ;
+//        props.setProperty("hibernate.hbm2ddl.auto", "create-drop") ;
 
         return props ;
 
@@ -120,17 +120,20 @@ public class WebConfig implements WebMvcConfigurer {
     public LocalSessionFactoryBean sessionFactory(){
 
         // create session factory
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
         // set the properties
         sessionFactory.setDataSource(securityDataSource());
-        sessionFactory.setPackagesToScan(env.getProperty("hibernate.packagesToScan"));
+        sessionFactory.setPackagesToScan(new String[] { "com.gary" }); //.persistence.entity
         sessionFactory.setHibernateProperties(getHibernateProperties());
 
         return sessionFactory;
     }
 
 
+    // 叫 transactionManager, 當有需要用到transactionManager會默認使用名稱為transactionManager的transactionManager
+    // 如果有其他名稱的transactionManager, 例如JpaTransactionManager
+    // 可以在使用之前 用@Transactional(transactionManager = "例如JpaTransactionManager")
     @Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {

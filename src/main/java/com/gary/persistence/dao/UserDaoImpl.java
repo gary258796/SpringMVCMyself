@@ -7,10 +7,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.logging.Logger;
 
+
+//@Transactional(transactionManager = "hibernateTransactionManager")
 @Repository("UserDao")
 public class UserDaoImpl implements UserDao {
 
