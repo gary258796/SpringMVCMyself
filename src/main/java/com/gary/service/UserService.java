@@ -19,21 +19,17 @@ public interface UserService extends UserDetailsService {
 
     String retNameById(int id) ;
 
-    User findByName(String name);
-
-    User findByEmail(String email);
-
     User saveUser(UserDto userDto) throws EmailExistsException;
 
-    void saveUser(User user);
+    User saveUser(User user);
 
-    void updateUser(User user);
+    User updateUser(User user);
 
-    void updateUserImage(User user) ;
+    User updateUserImage(User user) ;
 
     void deleteUser(User user);
 
-    Long findUserCount();
+    long findUserCount();
 
     List<User> findUserByPage(int pageNo, int pageSize);
 

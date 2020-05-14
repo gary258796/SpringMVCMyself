@@ -124,7 +124,6 @@ public class UserServiceImpl implements UserService {
 
 
         System.out.println("\n >>>>>>>>> user.getPassword() : " + user.getPassword()) ;
-        System.out.println("\n >>>>>>>>> user.getPassword() : " + user.getPassword()) ;
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_USER")));
         user.setImgUrl( user.getImgUrl() );

@@ -19,7 +19,7 @@ public class After_updateUserInfo_Img {
 
     private Logger logger = Logger.getLogger(getClass().getName());
 
-    @Pointcut("execution(* com.gary.persistence..dao.UserDaoImpl.updateUser(..))")
+    @Pointcut("execution(* com.gary.service.imp.UserServiceImpl.updateUser(..))")
     public void updateUser(){}
 
     @After("updateUser() && args(user)")

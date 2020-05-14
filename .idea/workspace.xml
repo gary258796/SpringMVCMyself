@@ -8,28 +8,43 @@
   <component name="ChangeListManager">
     <list default="true" id="8d628c17-d96e-4613-ae44-8b8e632b4c6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/BaseDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/BaseDaoImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/MessageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/MessageDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/aop/After_updateUserInfo_Img.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/aop/After_updateUserInfo_Img.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/aaaaaaTokenDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/aaaaaaaTokenDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/aop/After_updateUserInfo_Img.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/aop/After_updateUserInfo_Img.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/dao/RoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/dao/RoleDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/dao/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/persistence/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/persistence/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/persistence/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gary/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gary/service/imp/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/service/imp/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mysql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mysql.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/web/controller/EditProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/web/controller/EditProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/web/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/web/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gary/web/util/UploadImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gary/web/util/UploadImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/aop/After_updateUserInfo_Img.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/aop/After_updateUserInfo_Img.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/dao/RoleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/dao/RoleDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/dao/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/persistence/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/service/imp/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/service/imp/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/mysql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/mysql.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/access-denied.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/views/access-denied.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/controller/EditProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/controller/EditProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/controller/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/util/UploadImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/garypracticela2/WEB-INF/classes/com/gary/web/util/UploadImage.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +72,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="86" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
+            <state relative-caret-position="75">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Role.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="method#Role#0;class#Role#0" />
+                <element signature="e#433#434#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="406">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,19 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/JpaConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,10 +124,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -108,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="1271">
+              <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,22 +145,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="134" column="58" lean-forward="true" selection-start-line="134" selection-start-column="58" selection-end-line="134" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="123">
+              <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mysql.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/VerificationTokenRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="60">
+              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="39" column="129" selection-start-line="39" selection-start-column="129" selection-end-line="39" selection-end-column="129" />
             </state>
           </provider>
         </entry>
@@ -141,22 +174,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/VerificationTokenServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
-                <element signature="e#821#822#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+            <state relative-caret-position="330">
+              <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,10 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>BBB</find>
-      <find>spring-boot-starter-mail</find>
-      <find>javax.mail</find>
-      <find>spring-context-support</find>
       <find>redirect:/customerHomePage</find>
       <find>myLoginPage</find>
       <find>redirect</find>
@@ -207,6 +222,10 @@
       <find>DataSource</find>
       <find>jpaTransactionManager</find>
       <find>getHibernateProperties</find>
+      <find>UserDao</find>
+      <find>updateUser</find>
+      <find>Use</find>
+      <find>RoleDao</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -215,13 +234,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/dao/imp/MessageDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/MessageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/imp/MessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/include/user_main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/util/Validate.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/message.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/message_zh_CN.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/message_zh_TW.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit-info.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editimg.jsp" />
@@ -230,14 +242,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/mail.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/util/SendEmailTLS.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/web/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/web/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/web/exception/UserNotEnabledException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/TokenDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/TokenDao.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/TokenRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/PersistenceJPAConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/VerificationTokenRepository.java" />
@@ -252,20 +262,29 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/TaskExecutorConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/CustomAuthenticationProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/MessageDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/BaseDaoImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/service/VerificationToken.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/service/imp/VerificationTokenServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mysql.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gary/config/JpaConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/aop/After_updateUserInfo_Img.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java" />
       </list>
     </option>
   </component>
@@ -310,6 +329,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -461,6 +481,26 @@
               <item name="garypracticela2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gary" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="garypracticela2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="garypracticela2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gary" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="garypracticela2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="garypracticela2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -468,13 +508,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588071956665" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589445791384" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -646,7 +685,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184600000" />
+    <option name="totallyTimeSpent" value="193348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,9 +698,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2811159" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17668097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -671,7 +709,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.26912567" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.07650273" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.094262294" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -680,7 +718,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.534153" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.22510232" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.12295082" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.568306" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329235" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.040983606" />
@@ -811,45 +849,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/aaaaaaTokenDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/aaaaaaaTokenDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="230" column="17" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/PersistenceJPAConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mail.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -914,13 +913,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/security/CustomAuthenticationSuccessHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/CustomAuthenticationSuccessHandler.java">
@@ -1016,62 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="56" lean-forward="true" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#1199#1245#0" />
-            <element signature="e#1266#1290#0" />
-            <element signature="method#retNameById#0;class#UserDaoImpl#0" />
-            <element signature="method#findByUserName#0;class#UserDaoImpl#0" />
-            <element signature="e#2036#2082#0" />
-            <element signature="e#2103#2127#0" />
-            <element signature="method#findById#0;class#UserDaoImpl#0" />
-            <element signature="e#2776#2822#0" />
-            <element signature="e#2843#2867#0" />
-            <element signature="method#saveUser#0;class#UserDaoImpl#0" />
-            <element signature="method#updateUser#0;class#UserDaoImpl#0" />
-            <element signature="method#updateUserImage#0;class#UserDaoImpl#0" />
-            <element signature="method#deleteUser#0;class#UserDaoImpl#0" />
-            <element signature="method#findAllUser#0;class#UserDaoImpl#0" />
-            <element signature="e#4905#4950#0" />
-            <element signature="e#4971#4995#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/MessageDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1086,20 +1022,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/VerificationToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/VerificationToken.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1107,38 +1030,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/VerificationTokenServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/repository/VerificationTokenRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/repository/VerificationTokenRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/mysql.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1146,44 +1038,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/OnRegistrationSuccessEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="86" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1204,6 +1062,169 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/web/controller/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="111" column="25" lean-forward="true" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/aop/Before_Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/aop/After_updateUserInfo_Img.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/RoleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1271">
+          <caret line="164" column="9" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/dao/VerificationTokenRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/VerificationTokenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/VerificationToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/event/Listener/RegistrationEmailListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/service/imp/VerificationTokenServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="method#Role#0;class#Role#0" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gary/persistence/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="39" column="129" selection-start-line="39" selection-start-column="129" selection-end-line="39" selection-end-column="129" />
         </state>
       </provider>
     </entry>

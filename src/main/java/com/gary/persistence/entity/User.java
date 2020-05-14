@@ -13,7 +13,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(unique = true, nullable = false)
 	protected int id;
 
 	@NotNull(message = "UserName is required!")
@@ -37,10 +37,10 @@ public class User {
 	@Column(name = "enabled")
 	private boolean enabled ;
 
-	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH})
 	@JoinTable(name = "users_roles",
-			joinColumns = @JoinColumn(name = "user_id"),
-			inverseJoinColumns = @JoinColumn(name = "role_id"))
+			joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
 	private Collection<Role> roles;
 
 	public User() {}
@@ -49,6 +49,7 @@ public class User {
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
+		this.enabled = false ;
 	}
 
 	public int getId() {
@@ -105,6 +106,33 @@ public class User {
 
 	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = (prime * result) + ((email == null) ? 0 : email.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final User user = (User) obj;
+		if (!email.equals(user.email)) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override

@@ -13,7 +13,6 @@ public class VerificationToken {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
     @Column(name = "token")
@@ -22,8 +21,8 @@ public class VerificationToken {
     @Column(name = "expiry_date")
     private Date expiryDate;
 
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", nullable = false)
+    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "token_whose"))
     private User user;
 
     protected VerificationToken(){} // will be use by jpa , we will not use it directly
