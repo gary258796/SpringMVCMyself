@@ -1,7 +1,7 @@
 package com.gary.service.imp;
 
-import com.gary.persistence.dao.RoleDao;
-import com.gary.persistence.dao.UserDao;
+import com.gary.persistence.dao.RoleRepository;
+import com.gary.persistence.dao.UserRepository;
 import com.gary.persistence.entity.Role;
 import com.gary.persistence.entity.User;
 import com.gary.service.UserService;
@@ -27,40 +27,65 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao ;
+    private UserRepository userRepository;
 
     @Autowired
-    private RoleDao roleDao;
+    private RoleRepository roleRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public User findByUserName(String userName) {
-        return userDao.findByUserName(userName);
+        return userRepository.findByUserName(userName);
     }
 
     @Override
     public User findByUserEmail(String userEmail) {
-        return userDao.findByUserEmail(userEmail) ;
+        return userRepository.findByEmail(userEmail) ;
     }
 
     // 名稱無法修改因為是繼承
     // 但內容我們實質上 是 loadUserByEmail
     @Override
     public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
-        User user = userDao.findByUserEmail(userEmail);
-        if (user == null) {
-            throw new UsernameNotFoundException("Invalid userEmail sor password.");
-        }
-        // user isn't null
-        // check if user is enabled or not(有沒有驗證過)
-        if( !user.isEnabled() ) { // not enabled
-            throw new UsernameNotFoundException("Not enabled yet. Please check your mail and click the link we sent for you when you registered.");
+
+//        boolean enabled = true;
+        boolean accountNonExpired = true;
+        boolean credentialsNonExpired = true;
+        boolean accountNonLocked = true;
+
+        try {
+            User user = userRepository.findByEmail(userEmail);
+            if (user == null) {
+                throw new UsernameNotFoundException("No user found with username: " + userEmail);
+            }
+
+            return new org.springframework.security.core.userdetails.User(
+                    user.getEmail(),
+                    user.getPassword().toLowerCase(),
+                    user.isEnabled(),
+                    accountNonExpired,
+                    credentialsNonExpired,
+                    accountNonLocked,
+                    mapRolesToAuthorities(user.getRoles())
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
-        return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
-                mapRolesToAuthorities(user.getRoles()));
+//        User user = userRepository.findByEmail(userEmail) ;
+//        if (user == null) {
+//            throw new UsernameNotFoundException("Invalid userEmail sor password.");
+//        }
+//        // user isn't null
+//        // check if user is enabled or not(有沒有驗證過)
+//        if( !user.isEnabled() ) { // not enabled
+//            throw new UsernameNotFoundException("Not enabled yet. Please check your mail and click the link we sent for you when you registered.");
+//        }
+//
+//        return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
+//                mapRolesToAuthorities(user.getRoles()));
     }
 
 
@@ -76,22 +101,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(int id) {
-        return userDao.findById( id ) ;
-    }
-
-    @Override
-    public User findByName(String name) {
-        return null;
-    }
-
-    @Override
-    public User findByEmail(String email) {
-        return null;
+        return userRepository.findById( id ) ;
     }
 
     @Override
     public String retNameById(int id) {
-        return userDao.retNameById(id) ;
+        return userRepository.findById(id).getUserName() ;
     }
 
     @Override
@@ -107,43 +122,41 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setEmail(userDto.getEmail());
         // give user default role of "USER"
-        user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_USER")));
+        user.setRoles(Arrays.asList(roleRepository.findByName("ROLE_USER")));
 
-        userDao.saveUser(user);
-
-        return user ;
-    }
-
-    @Override
-    public void saveUser(User user) {
+        return userRepository.save(user);
 
     }
 
     @Override
-    public void updateUser(User user) { // 編輯修改基本信息時 呼叫
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
 
+    @Override
+    public User updateUser(User user) { // 編輯修改基本信息時 呼叫
 
         System.out.println("\n >>>>>>>>> user.getPassword() : " + user.getPassword()) ;
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_USER")));
+        user.setRoles(Arrays.asList(roleRepository.findByName("ROLE_USER")));
         user.setImgUrl( user.getImgUrl() );
 
-        userDao.updateUser( user );
+        return userRepository.save(user);
     }
 
     @Override
-    public void updateUserImage(User user) {
-        userDao.updateUserImage( user );
+    public User updateUserImage(User user) {
+        return userRepository.save(user);
     }
 
     @Override
     public void deleteUser(User user) {
-
+        userRepository.delete(user);
     }
 
     @Override
-    public Long findUserCount() {
-        return null;
+    public long findUserCount() {
+        return userRepository.count() ;
     }
 
     @Override
@@ -153,12 +166,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAllUser() {
-        return userDao.findAllUser() ;
+        return userRepository.findAll();
     }
 
     @Override
     public boolean isUserEmailExist(String email) {
-        User checkUser = userDao.findByUserEmail(email) ;
+        User checkUser = userRepository.findByEmail(email) ;
         if(checkUser==null) return false ;
 
         return true;
@@ -167,7 +180,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean isUserEmailExistExceptSelf(String sqlEmail, String localEmail) {
 
-        List<User> users = findAllUser();
+        List<User> users = userRepository.findAll();
         for(User user : users){
             if(!user.getEmail().equals(localEmail)){
                 if(user.getEmail().equals(sqlEmail)){

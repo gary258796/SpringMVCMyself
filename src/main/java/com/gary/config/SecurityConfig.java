@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                .loginProcessingUrl("/authenticateTheUser")
                .usernameParameter("email")
                .successHandler(customAuthenticationSuccessHandler)
-               .failureHandler(customAuthenticationFailureHandler)
+//               .failureHandler(customAuthenticationFailureHandler)
                .permitAll()
                .and()
                .logout().permitAll()

@@ -34,7 +34,7 @@ import java.util.logging.Logger;
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.gary")
-@PropertySource({"classpath:/mysql.properties", "classpath:/mail.properties"})
+@PropertySource({"classpath:/mysql.properties"})
 @EnableJpaRepositories(basePackages = "com.gary.persistence.dao")
 public class WebConfig implements WebMvcConfigurer {
 
@@ -178,22 +178,6 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/upload/**")
                 .addResourceLocations("/WEB-INF/upload/")
                 .setCachePeriod(31556926);
-    }
-
-    // SMTP相關設定
-    @Bean
-    public MailSender mailSender(Environment env){
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost(env.getProperty("spring.mail.host"));
-        mailSender.setPort(587);
-        mailSender.setProtocol(env.getProperty("spring.mail.protocal"));
-        mailSender.setUsername(env.getProperty("spring.mail.username"));
-        mailSender.setPassword(env.getProperty("spring.mail.password"));
-
-        Properties props = mailSender.getJavaMailProperties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        return mailSender ;
     }
 
 }
